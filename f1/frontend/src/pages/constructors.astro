@@ -1,0 +1,16 @@
+---
+// JavaScript version of constructors.astro (no TypeScript)
+import Layout from '../layouts/Layout.astro';
+import ConstructorsList from '../components/ConstructorsList.jsx';
+---
+
+<Layout title="F1 2024 Teams">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">2024 F1 Teams</h1>
+      <p class="text-f1-gray text-lg">The constructors competing in the 2024 Formula 1 World Championship</p>
+    </div>
+    
+    <ConstructorsList client:load />
+  </div>
+</Layout>

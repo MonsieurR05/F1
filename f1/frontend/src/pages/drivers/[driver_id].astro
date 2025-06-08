@@ -1,0 +1,33 @@
+---
+// Dynamic driver detail page
+import Layout from '../../layouts/Layout.astro';
+import DriverDetail from '../../components/DriverDetail.jsx';
+
+// Required function for dynamic routes in Astro
+export async function getStaticPaths() {
+  try {
+    // Fetch all drivers from the API
+    const response = await fetch('http://localhost:5000/api/drivers');
+    const drivers = await response.json();
+    
+    // Generate paths for each driver
+    return drivers.map((driver) => ({
+      params: { driver_id: driver.driver_id },
+      props: { driver }
+    }));
+  } catch (error) {
+    console.error('Error fetching drivers for static paths:', error);
+    // Return empty array if API is not available during build
+    return [];
+  }
+}
+
+// Get the driver data passed from getStaticPaths
+const { driver } = Astro.props;
+---
+
+<Layout title={`${driver?.full_name || 'Driver'} - F1 2024`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <DriverDetail client:load />
+  </div>
+</Layout>

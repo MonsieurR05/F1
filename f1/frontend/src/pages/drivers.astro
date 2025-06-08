@@ -1,0 +1,16 @@
+---
+// JavaScript version of drivers.astro (no TypeScript)
+import Layout from '../layouts/Layout.astro';
+import DriversList from '../components/DriversList.jsx';
+---
+
+<Layout title="F1 2024 Drivers">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">2024 F1 Drivers</h1>
+      <p class="text-f1-gray text-lg">Meet the drivers competing in the 2024 Formula 1 World Championship</p>
+    </div>
+    
+    <DriversList client:load />
+  </div>
+</Layout>

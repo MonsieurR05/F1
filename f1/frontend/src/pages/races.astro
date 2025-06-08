@@ -1,0 +1,16 @@
+---
+// JavaScript version of races.astro (no TypeScript)
+import Layout from '../layouts/Layout.astro';
+import RacesList from '../components/RacesList.jsx';
+---
+
+<Layout title="F1 2024 Races">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">2024 F1 Race Calendar</h1>
+      <p class="text-f1-gray text-lg">Complete race calendar with results and qualifying data</p>
+    </div>
+    
+    <RacesList client:load />
+  </div>
+</Layout>

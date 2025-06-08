@@ -1,0 +1,144 @@
+---
+// Modern homepage with professional design
+import Layout from '../layouts/Layout.astro';
+import StatsCard from '../components/StatsCard.jsx';
+import ChampionCard from '../components/ChampionCard.jsx';
+---
+
+<Layout title="F1 2024 Season">
+  <!-- Hero Section -->
+  <div class="relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-600/20 via-transparent to-accent-500/10"></div>
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.02"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div class="text-center animate-slide-up">
+        <h1 class="text-5xl lg:text-7xl font-display font-bold mb-6">
+          <span class="bg-gradient-to-r from-white via-primary-200 to-accent-300 bg-clip-text text-transparent">
+            Formula 1
+          </span>
+          <br>
+          <span class="text-white/90">2024 Season</span>
+        </h1>
+        <p class="text-xl lg:text-2xl text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
+          Explore the complete 2024 F1 championship data with detailed analytics, 
+          driver profiles, and real-time standings in a beautiful, modern interface.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/drivers" 
+            class="group px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-semibold rounded-xl shadow-large hover:shadow-glow transition-all duration-300 transform hover:scale-105"
+          >
+            <span class="flex items-center justify-center space-x-2">
+              <span>Explore Drivers</span>
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </span>
+          </a>
+          <a 
+            href="/standings" 
+            class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 transform hover:scale-105"
+          >
+            View Championship
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-display font-bold text-white mb-4">
+        2024 Season Overview
+      </h2>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto">
+        Comprehensive statistics and insights from the current Formula 1 season
+      </p>
+    </div>
+    
+    <div class="animate-slide-up">
+      <StatsCard client:load />
+    </div>
+  </div>
+
+  <!-- Champions Section -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-display font-bold text-white mb-4">
+        2024 Champions
+      </h2>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto">
+        Current leaders in both driver and constructor championships
+      </p>
+    </div>
+    
+    <div class="animate-scale-in">
+      <ChampionCard client:load />
+    </div>
+  </div>
+
+  <!-- Quick Navigation -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-display font-bold text-white mb-4">
+        Explore F1 2024
+      </h2>
+      <p class="text-white/60 text-lg max-w-2xl mx-auto">
+        Dive deep into every aspect of the 2024 Formula 1 season
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="/drivers" class="group p-8 bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-large">
+        <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">👨‍💼</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Drivers</h3>
+        <p class="text-white/60 text-sm mb-4">Meet the 2024 F1 drivers with detailed profiles and statistics</p>
+        <div class="flex items-center text-primary-400 text-sm font-medium">
+          <span>Explore</span>
+          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+      
+      <a href="/constructors" class="group p-8 bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-large">
+        <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🏎️</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Teams</h3>
+        <p class="text-white/60 text-sm mb-4">Constructor championship battle and team information</p>
+        <div class="flex items-center text-primary-400 text-sm font-medium">
+          <span>Explore</span>
+          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+      
+      <a href="/races" class="group p-8 bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-large">
+        <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🏁</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Races</h3>
+        <p class="text-white/60 text-sm mb-4">Complete race calendar with results and qualifying data</p>
+        <div class="flex items-center text-primary-400 text-sm font-medium">
+          <span>Explore</span>
+          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+      
+      <a href="/standings" class="group p-8 bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-large">
+        <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🏆</div>
+        <h3 class="text-xl font-semibold text-white mb-2">Standings</h3>
+        <p class="text-white/60 text-sm mb-4">Championship standings and points breakdown</p>
+        <div class="flex items-center text-primary-400 text-sm font-medium">
+          <span>Explore</span>
+          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</Layout>
